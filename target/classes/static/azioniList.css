@@ -1,0 +1,121 @@
+html{
+  background-color: linen;
+  height: 100%;
+
+}
+
+@keyframes growAnimation {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+
+#logo{
+  margin-left:50%;
+  margin-right: 50%;
+  margin-top: 30px;
+}
+
+.navigationMenu{
+  display: flex;
+  flex-grow: 1;
+ background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(69,69,69,0.4418150436046512) 0%);
+  justify-content: space-evenly;
+  align-items:center;
+
+  
+}
+
+
+header a {
+  color: white;
+  margin-left:5%;
+}
+
+
+
+header a:hover{
+  color: LightGray;
+}
+
+
+a:link{
+  text-decoration: none;
+}
+
+
+
+header a {
+  color: white;
+  margin-left:5%;
+}
+
+ .navigationMenu a:hover{
+  color: LightGray;
+}
+
+body{
+  text-align: center;
+}
+
+h2{
+  margin-top:5%;
+}
+
+.azione{
+  width: 20%;
+  margin-left: 40%;
+  margin-top: 2%;
+  font-size: 110%;
+  border: 2px outset tan;
+
+}
+
+
+div.azione a{
+  color:black;
+}
+
+div.azione:hover{
+  background-color: AntiqueWhite;
+}
+
+
+
+footer a:link{
+  color:black;
+  text-decoration: none;
+}
+
+footer a:hover{
+  color: LightGray;
+}
+
+footer{
+  display:flex;
+  
+  height:150px;
+  background-color: tan;
+ margin-left:-10px;
+  margin-right:-10px;
+  margin-top: 100%;
+
+  
+}
+
+#footerFlex{
+  display:flex;
+   color: black;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-left:  42%
+   
+   
+  
+}
+

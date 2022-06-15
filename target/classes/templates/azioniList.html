@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Michelin Catering:Buffet</title>
+  <link rel="stylesheet" href="/azioniList.css" />
+</head>
+<header>
+<div class="navigationMenu">
+   <img src="/logo.png" height=10% width=7%  id="logo"></img>
+</div>
+<div class="navigationMenu">
+  <a th:href="@{/buffet}"><strong>I BUFFET</strong></a>
+  <a th:href="@{/chef}"><strong>GLI CHEF</strong></a>
+  <a th:href="@{/index}"><strong>HOME</strong></a>
+  <a th:href="@{/piatti}"><strong>I PIATTI</strong></a>
+  <a th:href="@{/azioni}"><strong>AREA RISERVATA</strong></a>
+</div>
+</header>
+<body>
+  <h2>Cosa vuoi fare?</h2>
+  <div class="azione"><a th:href="@{/chefForm}"><span>Aggiungi Chef</span></a> </div>
+  <div class="azione"><a th:href="@{/buffetForm}"><span>Aggiungi Buffet</span></a></div>
+  <div class="azione"><a th:href="@{/piattoForm}"><span>Aggiungi Piatto</span></a></div>
+  <div class="azione"><a th:href="@{/ingredienteForm}"><span>Aggiungi Ingrediente</span></a></div>
+  <div class="azione"><a th:href="@{/logout}"><span>Logout</span></a></div>
+</body>
+<footer>
+  <div id="footerFlex">
+  <text><strong>Michelin Catering S.r.l.</strong></text>
+  <text>Corso Italia, 15 - 00162 - Roma </text>
+  <a  href="tel:+39 3210456789">Tel. +39 3210456789</a>
+  <a href="mailto:info@michelincatering.it"> info@michelincatering.it</a>
+</div>
+</footer>
+
+
+</html>

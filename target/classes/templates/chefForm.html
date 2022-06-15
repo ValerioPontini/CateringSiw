@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Michelin Catering:Buffet</title>
+  <link rel="stylesheet" href="/chefForm.css" />
+</head>
+<header>
+<div class="navigationMenu">
+   <img src="/logo.png" height=10% width=7%  id="logo"></img>
+</div>
+<div class="navigationMenu">
+  <a th:href="@{/buffet}"><strong>I BUFFET</strong></a>
+  <a th:href="@{/chef}"><strong>GLI CHEF</strong></a>
+  <a th:href="@{/index}"><strong>HOME</strong></a>
+  <a th:href="@{/piatti}"><strong>I PIATTI</strong></a>
+  <a th:href="@{/azioni}"><strong>AREA RISERVATA</strong></a>
+</div>
+</header>
+<body>
+  <h1> Aggiungi Chef</h1>
+<form  th:if="${chef.id != null}" th:action="@{'/chef'+'/'+${chef.id}}" method="post" th:object="${chef}">
+<span th:if="${#fields.hasGlobalErrors()}">
+<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">errore globale</p>
+</span>
+<div class="campo">nome:<input type="text" th:field="*{nome}" th:value="${chef.nome}"></div>
+<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" ></span>
+<div class="campo">cognome:<input type="text" th:field="*{cognome}" th:value="${chef.cognome}"></div>
+<span th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></span>
+<div class="campo">nazionalita:<input type="text" th:field="*{nazionalita}" th:value="${chef.nazionalita}"></div>
+<span th:if="${#fields.hasErrors('nazionalita')}" th:errors="*{nazionalita}"></span>
+<div class="campo"><button type="submit">Conferma</button></div>
+</form>
+<form  th:unless="${chef.id != null}" th:action="@{'/chef'}" method="post" th:object="${chef}">
+<span th:if="${#fields.hasGlobalErrors()}">
+<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">errore globale</p>
+</span>
+<div class="campo">nome:<input type="text" th:field="*{nome}" th:value="${chef.nome}"></div>
+<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" ></span>
+<div class="campo">cognome:<input type="text" th:field="*{cognome}" th:value="${chef.cognome}"></div>
+<span th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></span>
+<div class="campo">nazionalita:<input type="text" th:field="*{nazionalita}" th:value="${chef.nazionalita}"></div>
+<span th:if="${#fields.hasErrors('nazionalita')}" th:errors="*{nazionalita}"></span>
+<div class="campo"><button type="submit">Conferma</button></div>
+</form>
+</body>
+<footer>
+  <div id="footerFlex">
+  <text><strong>Michelin Catering S.r.l.</strong></text>
+  <text>Corso Italia, 15 - 00162 - Roma </text>
+  <a  href="tel:+39 3210456789">Tel. +39 3210456789</a>
+  <a href="mailto:info@michelincatering.it"> info@michelincatering.it</a>
+</div>
+</footer>
+
+
+</html>

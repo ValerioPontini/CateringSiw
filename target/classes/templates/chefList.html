@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Michelin Catering:Buffet</title>
+  <link rel="stylesheet" href="/chefList.css" />
+</head>
+<header>
+<div class="navigationMenu">
+   <img src="/logo.png" height=10% width=7%  id="logo"></img>
+</div>
+<div class="navigationMenu">
+  <a th:href="@{/buffet}"><strong>I BUFFET</strong></a>
+  <a th:href="@{/chef}"><strong>GLI CHEF</strong></a>
+  <a th:href="@{/index}"><strong>HOME</strong></a>
+  <a th:href="@{/piatti}"><strong>I PIATTI</strong></a>
+  <a href="/oauth2/authorization/github"><strong>AREA RISERVATA</strong></a>
+</div>
+</header>
+<body>
+  <h1>I NOSTRI CHEF</h1>
+  <text class="desc"> Da tutto il mondo sono i migliori nel loro campo, sempre al lavoro per stupirti con le loro creazioni!</text>
+   <form th:action="@{/chef/Search}" method="get" th:object="${chefName}">
+        <input placeholder="cerca il nome di uno chef" th:field="*{nome}"></input>
+        <button type="submit" >vai</button>
+         <button type="submit" th:formaction="@{/chef}" formmethod="get" >Tutti gli chef</button>
+             <text th:if="${!found}"> Non esiste nessuno chef con questo nome! </text>
+   
+    </form>
+  <hr width="92%" color="tan" size="5%"></hr>
+  <span th:each="chef : ${chefList}">
+   <a  th:href="'/chef'+'/'+${chef.id}">
+    <span>
+    <h3 th:text="${chef.nome}+' '+${chef.cognome}+','">Antonino Cannavacciuolo,</h3>
+    <h4 th:text="${chef.nazionalita}">Italia</h4>
+   <div id="azioni" th:if="${role.ruolo == 'ADMIN'}">
+       <form th:action="@{'/azioni/eliminaChef'+'/'+${chef.id}}" method="post">
+          <button type="submit" >elimina</button>
+       </form>
+       <form th:action="@{'/azioni/modificaChef'+'/'+${chef.id}}" method="post">
+           <button type="submit" >modifica</button>
+       </form>
+      </div>
+     </span>
+ 	</a>
+ </span>
+
+    </body>
+    <footer>
+  <div id="footerFlex">
+  <text><strong>Michelin Catering S.r.l.</strong></text>
+  <text>Corso Italia, 15 - 00162 - Roma </text>
+  <a  href="tel:+39 3210456789">Tel. +39 3210456789</a>
+  <a href="mailto:info@michelincatering.it"> info@michelincatering.it</a>
+</div>
+</footer>
+
+
+</html>

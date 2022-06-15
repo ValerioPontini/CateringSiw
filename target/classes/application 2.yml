@@ -1,0 +1,9 @@
+#collegamento con GitHub
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: dc2235725267fcc21cd6
+            clientSecret: df223ac3aeed3f4403ca6cadb497aa35efab5a65
