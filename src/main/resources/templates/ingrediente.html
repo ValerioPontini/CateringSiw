@@ -1,0 +1,40 @@
+<!DOCTYPE html><!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Michelin Catering:Buffet</title>
+  <link rel="stylesheet" href="/ingrediente.css" />
+</head>
+<header>
+<div class="navigationMenu">
+   <img src="/logo.png" height=10% width=7%  id="logo"></img>
+</div>
+<div class="navigationMenu">
+  <a th:href="@{/buffet}"><strong>I BUFFET</strong></a>
+  <a th:href="@{/chef}"><strong>GLI CHEF</strong></a>
+  <a th:href="@{/index}"><strong>HOME</strong></a>
+  <a th:href="@{/piatti}"><strong>I PIATTI</strong></a>
+  <a href="/oauth2/authorization/github"><strong>AREA RISERVATA</strong></a>
+</div>
+<body>
+  <div id="flexBody">
+    <h1 th:text="${ingrediente.nome}">NOME INGREDIENTE</h1>
+    <hr size="5%" width="95%" color="tan"></hr>
+  <span>
+  <h4>Origine:</h4>
+    <text th:text="${ingrediente.origine}">Italia</text>
+  </span>
+  <h5 th:text="${ingrediente.descrizione}"> un ingrediente buonissimo esotico super ciao</text>
+  </div>
+</body>
+</header>
+<footer>
+  <div id="footerFlex">
+  <text><strong>Michelin Catering S.r.l.</strong></text>
+  <text>Corso Italia, 15 - 00162 - Roma </text>
+  <a  href="tel:+39 3210456789">Tel. +39 3210456789</a>
+  <a href="mailto:info@michelincatering.it"> info@michelincatering.it</a>
+</div>
+</footer>
+
+
+</html>

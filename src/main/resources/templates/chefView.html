@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Michelin Catering:Buffet</title>
+  <link rel="stylesheet" href="/chefView.css" />
+</head>
+<header>
+<div class="navigationMenu">
+   <img src="/logo.png" height=10% width=7%  id="logo"></img>
+</div>
+<div class="navigationMenu">
+  <a th:href="@{/buffet}"><strong>I BUFFET</strong></a>
+  <a th:href="@{/chef}"><strong>GLI CHEF</strong></a>
+  <a th:href="@{/index}"><strong>HOME</strong></a>
+  <a th:href="@{/piatti}"><strong>I PIATTI</strong></a>
+  <a href="/oauth2/authorization/github"><strong>AREA RISERVATA</strong></a>
+</div>
+</header>
+<body>
+  <span>
+  <h1 th:text="${chef.nome}+' '+${chef.cognome}+','">ANTONINO CANNAVACCIUOLO,</h1>
+   <h2 th:text="${chef.nazionalita}">Italy </h2>
+  </span>
+  <hr width="92%" color="tan" size="5%"></hr>
+  <h3>I miei buffet:</h3>
+  <div id="buffetList">
+ <div th:each="buffet : ${chef.buffet}" class="buffet"> 
+    <a th:href="@{'/buffet'+'/'+${buffet.id}}">
+    <h4 th:text="${buffet.nome}">Titolo</h4>
+    <text th:text="${buffet.descrizione}">djfdnjjdn buonisdnsioDMDMDOSOJ JSIJ</text>
+    </a>
+</div>
+ </div>
+    </body>
+    <footer>
+  <div id="footerFlex">
+  <text><strong>Michelin Catering S.r.l.</strong></text>
+  <text>Corso Italia, 15 - 00162 - Roma </text>
+  <a  href="tel:+39 3210456789">Tel. +39 3210456789</a>
+  <a href="mailto:info@michelincatering.it"> info@michelincatering.it</a>
+</div>
+</footer>
+
+
+</html>

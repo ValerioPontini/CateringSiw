@@ -1,0 +1,161 @@
+html{
+  background-color: linen;
+  height: 100%;
+
+}
+
+
+#logo{
+  margin-left:50%;
+  margin-right: 50%;
+  margin-top: 30px;
+}
+
+.navigationMenu{
+  display: flex;
+  flex-grow: 1;
+ background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(69,69,69,0.4418150436046512) 0%);
+  justify-content: space-evenly;
+  align-items:center;
+
+  
+}
+
+
+header a {
+  color: white;
+  margin-left:5%;
+}
+
+
+
+header a:hover{
+  color: LightGray;
+}
+
+
+a:link{
+  text-decoration: none;
+}
+
+
+
+header a {
+  color: white;
+  margin-left:5%;
+}
+
+ .navigationMenu a:hover{
+  color: LightGray;
+}
+
+body{
+ text-align:center;
+}
+h1{
+  margin-top:5%;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align:right;
+  margin-left:38%;
+  margin-right: 44%;
+  margin-top: 1%;
+
+}
+
+span{
+  color: saddleBrown;
+  font-weight:bold;
+  font-size: 80%;
+  text-align: right;
+}
+
+input{
+  margin-left: 3%;
+  text-align:left;
+  box-sizing: border-box;
+  border: 2px inset tan;
+  background-color: antiquewhite;
+}
+
+select{
+  margin-left: 5%;
+  margin-right: -3%;
+  text-align:right;
+  box-sizing: border-box;
+  border-radius: 5%;
+  border: 2px inset tan;
+  background-color: antiquewhite;
+  width:150px;;
+}
+
+button{
+  margin-right: 25%;
+  margin-top: 10%;
+  background-color: navajoWhite;
+  border-radius: 40%;
+  font-size: 70%;
+  border-color: black;
+}
+
+button:hover{
+  background-color: tan;
+}
+
+
+
+.campo{
+  display:flex;
+  margin-bottom: 2%;
+}
+
+select option{
+  background-color: antiqueWhite;
+}
+
+select {
+  text-align: center;
+}
+
+form div{
+
+  font-size:110%;
+}
+
+
+
+footer a:link{
+  color:black;
+  text-decoration: none;
+}
+
+footer a:hover{
+  color: LightGray;
+}
+
+footer{
+  display:flex;
+  
+  height:150px;
+  background-color: tan;
+ margin-left:-10px;
+  margin-right:-10px;
+  margin-top: 100%;
+
+  
+}
+
+#footerFlex{
+  display:flex;
+   color: black;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-left:  42%
+}
+   
+  

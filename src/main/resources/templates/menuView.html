@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Michelin Catering:Buffet</title>
+  <link rel="stylesheet" href="/menuView.css" />
+</head>
+<header>
+<div class="navigationMenu">
+   <img src="/logo.png" height=10% width=7%  id="logo"></img>
+</div>
+<div class="navigationMenu">
+  <a th:href="@{/buffet}"><strong>I BUFFET</strong></a>
+  <a th:href="@{/chef}"><strong>GLI CHEF</strong></a>
+  <a th:href="@{/index}"><strong>HOME</strong></a>
+  <a th:href="@{/piatti}"><strong>I PIATTI</strong></a>
+  <a href="/oauth2/authorization/github"><strong>AREA RISERVATA</strong></a>
+</div>
+</header>
+<body>
+  <div id="flexBody">
+    <span>
+    <h1 th:text="${buffet.nome}">TITOLO</h1> 
+      <text>by
+    <a th:href="@{'/chef'+'/'+${buffet.chef.id}}" th:text="${buffet.chef.nome}+' '+${buffet.chef.cognome}">Nome Chef </a>
+      </text>
+    </span>
+    <text class="desc" th:text="${buffet.descrizione}"> descrizione xsajnxnammsjiwnxksxosxj dsnjnksdinx</text>
+    <hr size="5%" width="80%" margin-left="6%" color="tan"> </hr>
+    <div class="piatto" th:each="piatto : ${buffet.piatti}">
+      <a id="piattoLink" th:href="'/piatti'+'/'+${piatto.id}">
+      <h3 th:text="${piatto.nome}"> Nome Piatto </h3>
+      <text class="desc" th:text="${piatto.descrizione}"> desczrizione menu </text>
+      <h6>Ingredienti:
+        <span id="ingredientiList">
+        <a th:each="ingrediente : ${piatto.ingredienti}" th:text="${ingrediente.nome}" th:href="@{'/ingrediente'+'/'+${ingrediente.id}}">cxksx,</a>
+        </span>
+       </h6>
+       </a>
+        <hr size="5%" width="200"  > </hr>
+        </div>
+  </div>
+</body>
+<footer>
+  <div id="footerFlex">
+  <text><strong>Michelin Catering S.r.l.</strong></text>
+  <text>Corso Italia, 15 - 00162 - Roma </text>
+  <a  href="tel:+39 3210456789">Tel. +39 3210456789</a>
+  <a href="mailto:info@michelincatering.it"> info@michelincatering.it</a>
+</div>
+</footer>
+
+
+</html>

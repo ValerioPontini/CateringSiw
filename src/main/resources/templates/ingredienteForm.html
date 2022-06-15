@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Michelin Catering:Buffet</title>
+  <link rel="stylesheet" href="/ingredienteForm.css" />
+</head>
+<header>
+<div class="navigationMenu">
+   <img src="/logo.png" height=10% width=7%  id="logo"></img>
+</div>
+<div class="navigationMenu">
+  <a th:href="@{/buffet}"><strong>I BUFFET</strong></a>
+  <a th:href="@{/chef}"><strong>GLI CHEF</strong></a>
+  <a th:href="@{/index}"><strong>HOME</strong></a>
+  <a th:href="@{/piatti}"><strong>I PIATTI</strong></a>
+  <a th:href="@{/azioni}"><strong>AREA RISERVATA</strong></a>
+</div>
+</header>
+<body>
+  <h1> Aggiungi Ingrediente</h1>
+<form th:action="@{/ingrediente}" method="post" th:object="${ingrediente}">
+<span th:if="${#fields.hasGlobalErrors()}">
+<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">errore globale</p>
+</span>
+<div class="campo">nome:<input type="text" th:field="*{nome}"/></div>
+<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+<div class="campo">origine:<input type="text" th:field="*{origine}"/></div>
+<span th:if="${#fields.hasErrors('origine')}" th:errors="*{origine}"></span>
+<div class="campo">descrizione:<input type="text" th:field="*{descrizione}"/></div>
+<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>
+<div><button type="submit">Conferma</button></div>
+</form>
+</body>
+  <footer>
+  <div id="footerFlex">
+  <text><strong>Michelin Catering S.r.l.</strong></text>
+  <text>Corso Italia, 15 - 00162 - Roma </text>
+  <a  href="tel:+39 3210456789">Tel. +39 3210456789</a>
+  <a href="mailto:info@michelincatering.it"> info@michelincatering.it</a>
+</div>
+</footer>
+
+
+</html>

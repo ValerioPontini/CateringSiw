@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Michelin Catering:Buffet</title>
+  <link rel="stylesheet" href="/buffetList.css" />
+</head>
+<header>
+<div class="navigationMenu">
+   <img src="/logo.png" height=10% width=7%  id="logo"></img>
+</div>
+<div class="navigationMenu">
+  <a th:href="@{/buffet}"><strong>I BUFFET</strong></a>
+  <a th:href="@{/chef}"><strong>GLI CHEF</strong></a>
+  <a th:href="@{/index}"><strong>HOME</strong></a>
+  <a th:href="@{/piatti}"><strong>I PIATTI</strong></a>
+  <a href="/oauth2/authorization/github"><strong>AREA RISERVATA</strong></a>
+</div>
+</header>
+<body>
+  <div id="flexBody">
+    <h1>I NOSTRI BUFFET</h1>
+    <text class="buffetDesc">Tutti i nostri buffet sono ideati da chef stellati per dare al tuo evento il giusto sapore! </text>
+   <form th:action="@{/buffet/Search}" method="get" th:object="${buffetName}">
+        <input placeholder="cerca il nome di un buffet" th:field="*{nome}"></input>
+        <button type="submit" >vai</button>
+         <button type="submit" th:formaction="@{/buffet}" formmethod="get" >Tutti i buffet</button>
+        <text th:if="${!found}"> Non esiste nessun buffet con questo nome! </text>
+    </form>
+    <hr width="92%" color="tan" size="5%"></hr>
+    <div id="elementoLista" th:each="buffet : ${buffetList}">
+    <div  class="buffetItem">
+      <a th:href="@{'/buffet'+'/'+${buffet.id}}" class="menuLink">
+      <span id="titolo">
+      <h3 th:text="${buffet.nome}">titolo menu </h3>
+      <text>by</text>
+      <text th:text="${buffet.chef.nome}+' '+${buffet.chef.cognome}"> nome Chef</text>
+      </span>
+      <text th:text="${buffet.descrizione}">descrizionwmwnu fjndwndfnckcna</text>
+        </a>
+    </div>
+     <div id="azioni" th:if="${role.ruolo == 'ADMIN' }">
+       <form th:action="@{'/azioni/eliminaBuffet'+'/'+${buffet.id}}" method="post">
+          <button type="submit" >elimina</button>
+       </form>
+       <form th:action="@{'/azioni/modificaBuffet'+'/'+${buffet.id}}" method="post">
+           <button type="submit" >modifica</button>
+       </form>
+      </div>
+</div>
+  </div>
+</body>
+<footer>
+  <div id="footerFlex">
+  <text><strong>Michelin Catering S.r.l.</strong></text>
+  <text>Corso Italia, 15 - 00162 - Roma </text>
+  <a  href="tel:+39 3210456789">Tel. +39 3210456789</a>
+  <a href="mailto:info@michelincatering.it"> info@michelincatering.it</a>
+</div>
+</footer>
+
+

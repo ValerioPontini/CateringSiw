@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Michelin Catering:Buffet</title>
+  <link rel="stylesheet" href="/buffetForm.css" />
+</head>
+<header>
+<div class="navigationMenu">
+   <img src="/logo.png" height=10% width=7%  id="logo"></img>
+</div>
+<div class="navigationMenu">
+  <a th:href="@{/buffet}"><strong>I BUFFET</strong></a>
+  <a th:href="@{/chef}"><strong>GLI CHEF</strong></a>
+  <a th:href="@{/index}"><strong>HOME</strong></a>
+  <a th:href="@{/piatti}"><strong>I PIATTI</strong></a>
+  <a th:href="@{/azioni}"><strong>AREA RISERVATA</strong></a>
+</div>
+</header>
+<body>
+  <h1> Aggiungi Buffet</h1>
+<form th:if="${buffet.id != null}" th:action="@{'/buffet'+'/'+${buffet.id}}" method="post" th:object="${buffet}">
+<span th:if="${#fields.hasGlobalErrors()}">
+<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">errore globale</p>
+</span>
+<div class="campo">nome:<input type="text" th:field="*{nome}"   th:value="${buffet.nome}"  /></div>
+<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+<div class="campo">descrizione:<input type="text" th:field="*{descrizione}" th:value="${buffet.descrizione}"/></span>
+<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></div>
+<div class="campo">chef:<select th:field="*{chef}" th:value="${buffet.chef}">
+		
+		<option  th:each="chef : ${chefList}" th:value="${chef.id}" th:text="${chef.nome}+' '+${chef.cognome}">nome Chef</option>
+		</select> </div>
+<span th:if="${#fields.hasErrors('chef')}" th:errors="*{chef}"></span>
+<div class="campo"><button type="submit">Conferma</button></div>
+</form>
+<form th:unless="${buffet.id != null}" th:action="@{'/buffet'}" method="post" th:object="${buffet}">
+<span th:if="${#fields.hasGlobalErrors()}">
+<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">errore globale</p>
+</span>
+<div class="campo">nome:<input type="text" th:field="*{nome}"   th:value="${buffet.nome}"  /></div>
+<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+<div class="campo">descrizione:<input type="text" th:field="*{descrizione}" th:value="${buffet.descrizione}"/></span>
+<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></div>
+<div class="campo">chef:<select th:field="*{chef}" th:value="${buffet.chef}">
+		
+		<option  th:each="chef : ${chefList}" th:value="${chef.id}" th:text="${chef.nome}+' '+${chef.cognome}">nome Chef</option>
+		</select> </div>
+<span th:if="${#fields.hasErrors('chef')}" th:errors="*{chef}"></span>
+<div class="campo"><button type="submit">Conferma</button></div>
+</form>
+</body>
+<footer>
+  <div id="footerFlex">
+  <text><strong>Michelin Catering S.r.l.</strong></text>
+  <text>Corso Italia, 15 - 00162 - Roma </text>
+  <a  href="tel:+39 3210456789">Tel. +39 3210456789</a>
+  <a href="mailto:info@michelincatering.it"> info@michelincatering.it</a>
+</div>
+</footer>
+
+
+</html>

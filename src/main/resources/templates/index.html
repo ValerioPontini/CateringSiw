@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Michelin Catering</title>
+  <link rel="stylesheet" href="/index.css"></link>
+</head>
+<header>
+<div class="navigationMenu">
+
+   <img src="logo.png" height=10% width=7%  id="logo">
+    </img>
+
+</div>
+<div class="navigationMenu">
+  <a th:href="@{/buffet}"><strong>I BUFFET</strong></a>
+  <a th:href="@{/chef}"><strong>GLI CHEF</strong></a>
+   <text><strong>Michelin Catering</strong></text>
+  <a th:href="@{/piatti}"><strong>I PIATTI</strong></a>
+  <a href="/oauth2/authorization/github"><strong>AREA RISERVATA</strong></a>
+  
+</div>
+</header>
+ <body>
+  <div id="flexBody">
+    <div class="bodyItem">
+          <div class="textBody">
+             <a th:href="@{/buffet}"> 
+        <h3>I NOSTRI BUFFET</h3>
+        <text>Feste di compleanno, cerimonie, eventi aziendali e tanto altro...</text>
+        <h4>Scopri tutti i nostri buffet e trova quello migliore per il tuo evento! </h4>
+        </a>
+      </div>
+      <div class="imageBody">
+        <img  src="menu.jpeg" height=80% width=100%></img>
+      </div>
+    </div>
+    
+    <div class="bodyItem">
+       <div class="imageBody">
+        <img  src="piatto.jpeg" height=80% width=100%></img>
+      </div>
+      <div class="textBody">
+         <a th:href="@{/piatti}"> 
+        <h3>I NOSTRI PIATTI</h3>
+        <text>Dolci, salati, vegetariani, adatti ad ogni palato</text>
+        <h4>Prova l'emozione di assaggiare un piatto stellato e lasciati trasportare da un'esplosione di gusto!</h4> 
+        </a>
+      </div>
+    </div>
+ <div class="bodyItem">
+      <div class="textBody">
+         <a th:href="@{/chef}">
+        <h3>I NOSTRI CHEF</h3>
+        <text>Da tutto il mondo sempre alla ricerca di nuovi sapori</text>
+        <h4>Conosci i nostri chef stellati e prova le loro creazioni!</h4>
+         </a>
+      </div>
+       <div class="imageBody">
+        <img  src="chef.jpeg" height=80% width=100%></img>
+      </div>
+    </div>
+  </div>
+</body>
+<footer>
+  <div id="footerFlex">
+  <text><strong>Michelin Catering S.r.l.</strong></text>
+  <text>Corso Italia, 15 - 00162 - Roma </text>
+  <a  href="tel:+39 3210456789">Tel. +39 3210456789</a>
+  <a href="mailto:info@michelincatering.it"> info@michelincatering.it</a>
+</div>
+</footer>
+
+
+</html>
+
+
+</html>
+  
+  
